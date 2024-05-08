@@ -1,6 +1,17 @@
 import { createTheme } from "@mui/material";
 
 const theme = createTheme({
+  overrides: {
+    MuiCssBaseline: {
+      "@global": {
+        "*": {
+          padding: "0",
+          margin: "0",
+          boxSizing: "border-box",
+        },
+      },
+    },
+  },
   palette: {
     primary: {
       light: "#757ce8",

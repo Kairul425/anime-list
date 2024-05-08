@@ -13,7 +13,7 @@ const TopAnime = () => {
     const fetchData = async () => {
       try {
         const dataResponse = await axios.get(
-          `${import.meta.env.VITE_REACT_ANIME}?limit=24&page=${page}`
+          `${import.meta.env.VITE_REACT_ANIME}/top/anime?limit=24&page=${page}`
         );
         setTopData(dataResponse.data.data);
         setTotalPage(dataResponse.data.pagination.last_visible_page);

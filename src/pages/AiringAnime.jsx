@@ -15,7 +15,7 @@ const AiringAnime = () => {
         const dataResponse = await axios.get(
           `${
             import.meta.env.VITE_REACT_ANIME
-          }?filter=airing&limit=24&page=${page}`
+          }/top/anime?filter=airing&limit=24&page=${page}`
         );
         setAiringData(dataResponse.data.data);
         setTotalPage(dataResponse.data.pagination.last_visible_page);

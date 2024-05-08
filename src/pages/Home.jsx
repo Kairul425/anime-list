@@ -14,14 +14,16 @@ const Home = () => {
 
   useEffect(() => {
     axios
-      .get(import.meta.env.VITE_REACT_ANIME + "?limit=8")
+      .get(import.meta.env.VITE_REACT_ANIME + "/top/anime?limit=8")
       .then((res) => setTopData(res.data.data))
       .catch((err) => console.log(err));
   }, []);
 
   useEffect(() => {
     axios
-      .get(import.meta.env.VITE_REACT_ANIME + "?limit=8&filter=airing")
+      .get(
+        import.meta.env.VITE_REACT_ANIME + "/top/anime?limit=8&filter=airing"
+      )
       .then((res) => setAiringData(res.data.data))
       .catch((err) => console.log(err));
   }, []);
@@ -77,9 +79,11 @@ const Home = () => {
           Upcomming Anime
         </Typography>
         <div>
-          <Button variant="outlined" endIcon={<ArrowForwardIcon />}>
-            View All
-          </Button>
+          <Link to="/upcomming-anime">
+            <Button variant="outlined" endIcon={<ArrowForwardIcon />}>
+              View All
+            </Button>
+          </Link>
         </div>
       </Box>
       <UpcommingAnime />

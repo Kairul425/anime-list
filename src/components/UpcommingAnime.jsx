@@ -20,7 +20,8 @@ const UpcommingAnime = () => {
     const fetchData = async () => {
       try {
         const dataResponse = await axios.get(
-          import.meta.env.VITE_REACT_ANIME + "?filter=upcoming&limit=12"
+          import.meta.env.VITE_REACT_ANIME +
+            "/top/anime?filter=upcoming&limit=12"
         );
         setData(dataResponse.data.data);
       } catch (error) {
