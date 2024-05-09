@@ -34,7 +34,7 @@ const AiringAnime = () => {
 
   return (
     <Container>
-      <Typography variant="h1" sx={{ textAlign: "center" }}>
+      <Typography variant="h1" sx={{ textAlign: "center", mt: 5 }}>
         Airing Anime
       </Typography>
 

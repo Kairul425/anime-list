@@ -63,6 +63,7 @@ export default function SearchAppBar() {
         `${import.meta.env.VITE_REACT_ANIME}/anime?q=${search}&sfw`
       );
       navigate("/search-result", { state: { results: response.data.data } });
+      setSearch("");
     } catch (error) {
       console.log(error);
     }

@@ -28,6 +28,8 @@ const Home = () => {
       .catch((err) => console.log(err));
   }, []);
 
+  console.log(topData);
+
   return (
     <Container maxWidth="lg">
       <Box
