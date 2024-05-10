@@ -7,6 +7,8 @@ import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 
+import animeImage from "../../public/images/pp-anime.jpg";
+
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
   borderRadius: theme.shape.borderRadius,
@@ -85,10 +87,26 @@ export default function SearchAppBar() {
               <Link to="/" style={{ textDecoration: "none", color: "white" }}>
                 <Typography
                   variant="h6"
-                  sx={{ fontSize: { xs: "14px", sm: "20px", md: "24px" } }}
+                  sx={{
+                    display: { xs: "none", sm: "block" },
+                  }}
                 >
                   Anime List 😁
                 </Typography>
+                <Box
+                  sx={{
+                    width: "40px",
+                    height: "auto",
+                    display: { xs: "block", sm: "none" },
+                  }}
+                >
+                  <img
+                    src={animeImage}
+                    alt="anime"
+                    width="100%"
+                    style={{ borderRadius: "50%" }}
+                  />
+                </Box>
               </Link>
             </div>
 
