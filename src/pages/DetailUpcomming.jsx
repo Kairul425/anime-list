@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 
-import { Container, Typography, Box, Grid } from "@mui/material";
+import { Container, Typography, Box, Grid, Button } from "@mui/material";
 
 const DetailAnime = () => {
   const { id } = useParams();
@@ -32,6 +32,10 @@ const DetailAnime = () => {
     setSynopsisExpanded(!synopsisExpanded);
   };
 
+  const handleBack = () => {
+    window.history.back();
+  };
+
   return (
     <Container maxWidth="lg">
       <Typography
@@ -45,6 +49,14 @@ const DetailAnime = () => {
       >
         Detail Anime
       </Typography>
+
+      <Button
+        variant="outlined"
+        sx={{ mb: { xs: 1, sm: 2 } }}
+        onClick={handleBack}
+      >
+        Back
+      </Button>
 
       <Grid container spacing={2}>
         <Grid item xs={12} sm={4} md={3}>

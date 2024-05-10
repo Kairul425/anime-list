@@ -5,7 +5,7 @@ const Footer = () => {
     <Box
       sx={{
         textAlign: "center",
-        mt: { xs: 3, md: 10 },
+        mt: 10,
         py: { xs: 1, md: 2 },
         bgcolor: "primary.main",
       }}
