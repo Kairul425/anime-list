@@ -1,5 +1,12 @@
 import { styled, alpha } from "@mui/material/styles";
-import { AppBar, Toolbar, InputBase, Typography, Box } from "@mui/material";
+import {
+  AppBar,
+  Toolbar,
+  InputBase,
+  Typography,
+  Box,
+  IconButton,
+} from "@mui/material";
 
 import SearchIcon from "@mui/icons-material/Search";
 
@@ -75,60 +82,46 @@ export default function SearchAppBar() {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="fixed">
         <Toolbar>
-          <Box
-            sx={{
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
-              width: "100%",
-            }}
+          <Link to="/">
+            <IconButton
+              size="large"
+              edge="start"
+              color="inherit"
+              aria-label="open drawer"
+              sx={{ mr: 2 }}
+            >
+              <img
+                src={animeImage}
+                alt="logo-anime"
+                width="45px"
+                style={{ borderRadius: "50%" }}
+              />
+            </IconButton>
+          </Link>
+          <Typography
+            variant="h6"
+            noWrap
+            component="div"
+            sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
           >
-            <div>
-              <Link to="/" style={{ textDecoration: "none", color: "white" }}>
-                <Typography
-                  variant="h6"
-                  sx={{
-                    display: { xs: "none", sm: "block" },
-                  }}
-                >
-                  Anime List 😁
-                </Typography>
-                <Box
-                  sx={{
-                    width: "40px",
-                    height: "auto",
-                    display: { xs: "block", sm: "none" },
-                  }}
-                >
-                  <img
-                    src={animeImage}
-                    alt="anime"
-                    width="100%"
-                    style={{ borderRadius: "50%" }}
-                  />
-                </Box>
-              </Link>
-            </div>
-
-            <div>
-              <Search>
-                <SearchIconWrapper>
-                  <SearchIcon />
-                </SearchIconWrapper>
-                <StyledInputBase
-                  placeholder="Search…"
-                  inputProps={{ "aria-label": "search" }}
-                  value={search}
-                  onChange={handleSearchInputChange}
-                  onKeyPress={(event) => {
-                    if (event.key === "Enter") {
-                      handleSearch();
-                    }
-                  }}
-                />
-              </Search>
-            </div>
-          </Box>
+            RULL-ANIM-LIST
+          </Typography>
+          <Search>
+            <SearchIconWrapper>
+              <SearchIcon />
+            </SearchIconWrapper>
+            <StyledInputBase
+              placeholder="Search…"
+              inputProps={{ "aria-label": "search" }}
+              value={search}
+              onChange={handleSearchInputChange}
+              onKeyPress={(event) => {
+                if (event.key === "Enter") {
+                  handleSearch();
+                }
+              }}
+            />
+          </Search>
         </Toolbar>
       </AppBar>
     </Box>
