@@ -28,8 +28,6 @@ const Home = () => {
       .catch((err) => console.log(err));
   }, []);
 
-  console.log(topData);
-
   return (
     <Container maxWidth="lg">
       <Box
@@ -37,9 +35,14 @@ const Home = () => {
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
+          mt: "90px",
+          mb: 5,
         }}
       >
-        <Typography variant="h1" sx={{ my: 5 }}>
+        <Typography
+          variant="h1"
+          sx={{ fontSize: { xs: "22px", sm: "2.5rem" } }}
+        >
           Top Anime
         </Typography>
         <div>
@@ -56,9 +59,13 @@ const Home = () => {
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
+          my: 5,
         }}
       >
-        <Typography variant="h1" sx={{ my: 5 }}>
+        <Typography
+          variant="h1"
+          sx={{ fontSize: { xs: "22px", sm: "2.5rem" } }}
+        >
           Airing Anime
         </Typography>
         <div>
@@ -75,9 +82,13 @@ const Home = () => {
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
+          my: 5,
         }}
       >
-        <Typography variant="h1" sx={{ my: 5 }}>
+        <Typography
+          variant="h1"
+          sx={{ fontSize: { xs: "22px", sm: "2.5rem" } }}
+        >
           Upcomming Anime
         </Typography>
         <div>

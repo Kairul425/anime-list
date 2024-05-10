@@ -71,13 +71,17 @@ const DetailAnime = () => {
             variant="h6"
             sx={{ fontSize: { xs: "16px", sm: "20px" } }}
           >
-            🧿 Episode : {detail.episodes}
+            🧿 Broadcast : {detail.broadcast && detail.broadcast.string}
           </Typography>
           <Typography
             variant="h6"
             sx={{ fontSize: { xs: "16px", sm: "20px" } }}
           >
-            🧿 Score : {detail.score}
+            🧿 Aired :{" "}
+            {detail.aired &&
+              detail.aired.prop &&
+              detail.aired.prop.from &&
+              `${detail.aired.prop.from.day} - ${detail.aired.prop.from.month} - ${detail.aired.prop.from.year}`}
           </Typography>
           <Typography
             variant="h6"
@@ -95,13 +99,13 @@ const DetailAnime = () => {
             variant="h6"
             sx={{ fontSize: { xs: "16px", sm: "20px" } }}
           >
-            🧿 Rank : {detail.rank}
+            🧿 Type : {detail.type}
           </Typography>
           <Typography
             variant="h6"
             sx={{ fontSize: { xs: "16px", sm: "20px" } }}
           >
-            🧿 rating : {detail.rating}
+            🧿 Rating : {detail.rating}
           </Typography>
           <Typography
             variant="h6"
@@ -134,7 +138,7 @@ const DetailAnime = () => {
                       color: "blue",
                     }}
                   >
-                    {synopsisExpanded ? "Show Less" : "Show More"}
+                    {synopsisExpanded ? "Read Less" : "Read More"}
                   </button>
                 </>
               )}

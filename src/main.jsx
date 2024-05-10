@@ -13,6 +13,7 @@ import AiringAnime from "./pages/AiringAnime.jsx";
 import UpcommingAnime from "./pages/UpcommingAnime.jsx";
 import DetailAnime from "./pages/DetailAnime.jsx";
 import SearchResult from "./pages/SearchResult.jsx";
+import DetailUpcomming from "./pages/DetailUpcomming.jsx";
 
 // layout
 import Layout from "./Layout.jsx";
@@ -32,7 +33,7 @@ const router = createBrowserRouter([
       <Layout>
         <Home />
       </Layout>
-    ), // Gunakan Layout sebagai pembungkus untuk halaman
+    ),
   },
   {
     path: "/top-anime",
@@ -40,7 +41,7 @@ const router = createBrowserRouter([
       <Layout>
         <TopAnime />
       </Layout>
-    ), // Gunakan Layout sebagai pembungkus untuk halaman
+    ),
   },
   {
     path: "/airing-anime",
@@ -48,7 +49,7 @@ const router = createBrowserRouter([
       <Layout>
         <AiringAnime />
       </Layout>
-    ), // Gunakan Layout sebagai pembungkus untuk halaman
+    ),
   },
   {
     path: "/upcomming-anime",
@@ -56,7 +57,7 @@ const router = createBrowserRouter([
       <Layout>
         <UpcommingAnime />
       </Layout>
-    ), // Gunakan Layout sebagai pembungkus untuk halaman
+    ),
   },
   {
     path: "/detail-anime/:id",
@@ -64,7 +65,15 @@ const router = createBrowserRouter([
       <Layout>
         <DetailAnime />
       </Layout>
-    ), // Gunakan Layout sebagai pembungkus untuk halaman
+    ),
+  },
+  {
+    path: "/detail-upcomming/:id",
+    element: (
+      <Layout>
+        <DetailUpcomming />
+      </Layout>
+    ),
   },
   {
     path: "/search-result",
@@ -72,7 +81,7 @@ const router = createBrowserRouter([
       <Layout>
         <SearchResult />
       </Layout>
-    ), // Gunakan Layout sebagai pembungkus untuk halaman
+    ),
   },
 ]);
 

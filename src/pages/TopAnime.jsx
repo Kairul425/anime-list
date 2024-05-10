@@ -32,12 +32,20 @@ const TopAnime = () => {
 
   return (
     <Container>
-      <Typography variant="h1" sx={{ textAlign: "center", mt: 5 }}>
+      <Typography
+        variant="h1"
+        sx={{
+          textAlign: "center",
+          mt: "85px",
+          mb: { xs: 3, sm: 5 },
+          fontSize: { xs: "22px", sm: "2.5rem" },
+        }}
+      >
         Top Anime
       </Typography>
 
       <Link to="/">
-        <Button variant="outlined" sx={{ marginY: 5 }}>
+        <Button variant="outlined" sx={{ mb: { xs: 3, sm: 5 } }}>
           Back
         </Button>
       </Link>

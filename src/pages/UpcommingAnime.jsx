@@ -37,8 +37,6 @@ const UpcommingAnime = () => {
     fetchData();
   }, [page]);
 
-  console.log(upcomming);
-
   const handlePageChange = (event, value) => {
     event.preventDefault();
     setPage(value);
@@ -46,45 +44,60 @@ const UpcommingAnime = () => {
 
   return (
     <Container>
-      <Typography variant="h1" sx={{ textAlign: "center" }}>
+      <Typography
+        variant="h1"
+        sx={{
+          textAlign: "center",
+          mt: "85px",
+          mb: { xs: 3, sm: 5 },
+          fontSize: { xs: "22px", sm: "2.5rem" },
+        }}
+      >
         Upcomming Anime
       </Typography>
 
       <Link to="/">
-        <Button variant="outlined" sx={{ marginY: 5 }}>
+        <Button variant="outlined" sx={{ mb: { xs: 3, sm: 5 } }}>
           Back
         </Button>
       </Link>
       <Grid container spacing={2}>
         {upcomming?.map((item, index) => (
           <Grid item xs={6} sm={3} md={3} key={index}>
-            <Card sx={{ width: "100%", height: "100%" }}>
-              <CardActionArea>
-                <CardMedia
-                  component="img"
-                  height="140"
-                  image={item.images.jpg.image_url}
-                  alt="green iguana"
-                />
-                <CardContent>
-                  <Typography
-                    gutterBottom
-                    variant="h5"
-                    component="div"
-                    sx={{ textAlign: "center" }}
-                  >
-                    {item.title}
-                  </Typography>
-                  <Typography
-                    variant="body2"
-                    color="text.secondary"
-                    sx={{ textAlign: "center" }}
-                  >
-                    favorites : {item.favorites}
-                  </Typography>
-                </CardContent>
-              </CardActionArea>
-            </Card>
+            <Link
+              to={`/detail-upcomming/${item.mal_id}`}
+              style={{ textDecoration: "none" }}
+            >
+              <Card sx={{ width: "100%", height: "100%" }}>
+                <CardActionArea>
+                  <CardMedia
+                    component="img"
+                    height="140"
+                    image={item.images.jpg.image_url}
+                    alt="green iguana"
+                  />
+                  <CardContent>
+                    <Typography
+                      variant="h5"
+                      sx={{
+                        fontSize: { xs: "14px", sm: "20px" },
+                        mb: 1,
+                        textAlign: "center",
+                      }}
+                    >
+                      {item.title}
+                    </Typography>
+                    <Typography
+                      variant="body2"
+                      color="text.secondary"
+                      sx={{ textAlign: "center" }}
+                    >
+                      favorites : {item.favorites}
+                    </Typography>
+                  </CardContent>
+                </CardActionArea>
+              </Card>
+            </Link>
           </Grid>
         ))}
       </Grid>

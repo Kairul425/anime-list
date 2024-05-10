@@ -29,13 +29,28 @@ const CardAnime = ({ data }) => {
                   alt="green iguana"
                 />
                 <CardContent>
-                  <Typography gutterBottom variant="h5" component="div">
+                  <Typography
+                    variant="h5"
+                    sx={{
+                      fontSize: { xs: "14px", sm: "20px" },
+                      mb: 1,
+                      textAlign: "center",
+                    }}
+                  >
                     {item.title}
                   </Typography>
-                  <Typography variant="body2" color="text.secondary">
+                  <Typography
+                    variant="body2"
+                    color="text.secondary"
+                    sx={{ textAlign: "center" }}
+                  >
                     episode : {item.episodes}
                   </Typography>
-                  <Typography variant="body2" color="text.secondary">
+                  <Typography
+                    variant="body2"
+                    color="text.secondary"
+                    sx={{ textAlign: "center" }}
+                  >
                     score : {item.score}
                   </Typography>
                 </CardContent>

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Link } from "react-router-dom";
 
 import {
   Card,
@@ -34,29 +35,39 @@ const UpcommingAnime = () => {
 
   return (
     <>
-      <Swiper slidesPerView={4} spaceBetween={20} className="mySwiper">
+      <Swiper slidesPerView={4} spaceBetween={7} className="mySwiper">
         {data?.map((item, index) => (
           <SwiperSlide key={index}>
-            <Card sx={{ width: "100%", minHeight: "300px" }}>
-              <CardActionArea>
-                <CardMedia
-                  component="img"
-                  height="140"
-                  image={item.images.jpg.image_url}
-                  alt="green iguana"
-                />
-                <CardContent>
-                  <Typography
-                    gutterBottom
-                    variant="h5"
-                    component="div"
-                    sx={{ textAlign: "center" }}
-                  >
-                    {item.title}
-                  </Typography>
-                </CardContent>
-              </CardActionArea>
-            </Card>
+            <Link
+              to={`/detail-upcomming/${item.mal_id}`}
+              style={{ textDecoration: "none" }}
+            >
+              <Card
+                sx={{ width: "100%", minHeight: "300px", boxShadow: "none" }}
+              >
+                <CardActionArea>
+                  <CardMedia
+                    component="img"
+                    height="140"
+                    image={item.images.jpg.image_url}
+                    alt="green iguana"
+                  />
+                  <CardContent>
+                    <Typography
+                      gutterBottom
+                      variant="h5"
+                      component="div"
+                      sx={{
+                        textAlign: "center",
+                        fontSize: { xs: "12px", md: "20px" },
+                      }}
+                    >
+                      {item.title}
+                    </Typography>
+                  </CardContent>
+                </CardActionArea>
+              </Card>
+            </Link>
           </SwiperSlide>
         ))}
       </Swiper>
